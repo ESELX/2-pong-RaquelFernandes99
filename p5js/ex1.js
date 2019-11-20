@@ -13,6 +13,7 @@ function setup() { //código que só corre uma vez
 
 }
 
+<<<<<<< HEAD
   let posX, posY;
   let velX, velY;
   let padWidth, padHeight;
@@ -79,5 +80,10 @@ function setup() { //código que só corre uma vez
       points++;
     }
   }
+=======
+function draw() { //código que corre em loop
+  background(220); //podem apagar esta linha!
+
+>>>>>>> parent of ccf94f9... Pong
 
 }
