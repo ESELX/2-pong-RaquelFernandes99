@@ -1,6 +1,22 @@
 //Variáveis tipo let nomeDaVar;
+let posX, posY;
+let velX, velY;
+let padWidth, padHeight;
+let diamBall;
+let points;
+let vel;
 
 function setup() { //código que só corre uma vez
+  posX = random(width);
+  posY = 30;
+  vel = 5;
+  velX = vel;
+  velY = vel;
+  padWidth = 80;
+  padHeight = 8;
+  diamBall = 20;
+  points=0
+
 
   ///Não Apagar para Baixo até <<<
   var canvasDiv = document.getElementById('ex1');
@@ -12,28 +28,6 @@ function setup() { //código que só corre uma vez
 
 
 }
-
-
-
-  let posX, posY;
-  let velX, velY;
-  let padWidth, padHeight;
-  let diamBall;
-  let points;
-  let vel;
-
-  function setup() {
-    createCanvas(400, 400);
-    posX = random(width);
-    posY = 30;
-    vel = 5;
-    velX = vel;
-    velY = vel;
-    padWidth = 80;
-    padHeight = 8;
-    diamBall = 20;
-    points=0
-  }
 
   function draw() {
     //desenha
