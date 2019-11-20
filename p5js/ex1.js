@@ -7,17 +7,6 @@ let points;
 let vel;
 
 function setup() { //código que só corre uma vez
-  posX = random(width);
-  posY = 30;
-  vel = 5;
-  velX = vel;
-  velY = vel;
-  padWidth = 80;
-  padHeight = 8;
-  diamBall = 20;
-  points=0
-
-
   ///Não Apagar para Baixo até <<<
   var canvasDiv = document.getElementById('ex1');
   var width = canvasDiv.offsetWidth;
@@ -26,6 +15,15 @@ function setup() { //código que só corre uma vez
   sketchCanvas.parent('ex1');
   ///<<< Não fica a faltar createCanvas
 
+  posX = random(width);
+  posY = 30;
+  vel = 5;
+  velX = vel;
+  velY = vel;
+  padWidth = 90;
+  padHeight = 8;
+  diamBall = 40;
+  points=0
 
 }
 
@@ -59,7 +57,7 @@ function setup() { //código que só corre uma vez
       stroke(250)
      fill(0)
       textSize(80);
-      text("LOSER",60,200);
+      text("LOSER",height/2, width/2);
       print("LOSER");
       velX = 0;
       velY = 0;
