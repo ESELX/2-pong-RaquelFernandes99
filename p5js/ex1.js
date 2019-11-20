@@ -13,6 +13,7 @@ function setup() { //código que só corre uma vez
 
 }
 
+function draw() { //código que corre em loop
 
   let posX, posY;
   let velX, velY;
