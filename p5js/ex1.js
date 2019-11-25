@@ -30,18 +30,19 @@ function setup() { //código que só corre uma vez
   function draw() {
     //desenha
     background( 66, 80, 155);
-    textSize(20)
-    text(points,20,40);
-    posX = posX + velX;
-    posY = posY + velY;
-       stroke(250)
-    fill(66, 80, 155)
-    ellipse(posX,posY,diamBall);
-     stroke(250)
-    fill(66, 80, 155)
-    rectMode(CENTER);
-    rect(mouseX,height-10,padWidth,padHeight);
+    fill(250)
+ textSize(20)
+ text(points,20,40);
+ posX = posX + velX;
+ posY = posY + velY;
+    stroke(250)
 
+ fill(66, 80, 155)
+ ellipse(posX,posY,diamBall);
+  stroke(250)
+ fill(250)
+ rectMode(CENTER);
+ rect(mouseX,height-10,padWidth,padHeight);
     //calcula
     if (posX-diamBall/2 <= 0 || posX+diamBall/2 >= width) {
       velX = velX*-1;
