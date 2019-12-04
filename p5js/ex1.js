@@ -24,77 +24,76 @@ function setup() { //código que só corre uma vez
   padHeight = 8;
   diamBall = 40;
   points=0
+
 }
 
-function draw() {
-  //desenha
-  background( 224, 212, 247);
-
-  fill(250)
-  ellipse(width/2  , height/2 ,width)
-
-
-  fill(236, 230, 94)
-  ellipse(width/2  , height/2 ,width/2)
-
+  function draw() {
+    //desenha
+    background( 224, 212, 247);
 
     fill(250)
-  ellipse(width/2-90,height/2 , width/10)
+    ellipse(width/2  , height/2 ,width)
 
-  fill(250)
-  ellipse(width/2+90,height/2 , width/10)
 
-     fill(0)
-  ellipse(width/2-90,height/2 , width/20)
+    fill(236, 230, 94)
+    ellipse(width/2  , height/2 ,width/2)
 
-  fill(0)
-  ellipse(width/2+90,height/2 , width/20)
 
-  fill(0)
-  ellipse(width/2,height/2+90,width/ 8)
+      fill(250)
+    ellipse(width/2-90,height/2 , width/10)
 
-  fill(0)
-  textSize(20)
-  text(points,20,40);
-  posX = posX + velX;
-  posY = posY + velY;
-     stroke(250)
-  fill(0)
-  ellipse(posX,posY,diamBall);
-   stroke(21, 7, 66)
-  fill(21, 7, 66)
-  rectMode(CENTER);
-  rect(mouseX,height-10,padWidth,padHeight);
+    fill(250)
+    ellipse(width/2+90,height/2 , width/10)
 
-  //calcula
-  if (posX-diamBall/2 <= 0 || posX+diamBall/2 >= width) {
-    velX = velX*-1;
+       fill(0)
+    ellipse(width/2-90,height/2 , width/20)
+
+    fill(0)
+    ellipse(width/2+90,height/2 , width/20)
+
+    fill(0)
+    ellipse(width/2,height/2+90,width/ 8)
+
+    fill(0)
+    textSize(20)
+    text(points,20,40);
+    posX = posX + velX;
+    posY = posY + velY;
+       stroke(250)
+    fill(0)
+    ellipse(posX,posY,diamBall);
+     stroke(21, 7, 66)
+    fill(21, 7, 66)
+    rectMode(CENTER);
+    rect(mouseX,height-10,padWidth,padHeight);
+
+    //calcula
+    if (posX-diamBall/2 <= 0 || posX+diamBall/2 >= width) {
+      velX = velX*-1;
+    }
+    if (posY-diamBall/2 <= 0) {
+      velY = velY*-1;
+    }
+
+     stroke(0)
+     fill(250 )
+
+    if (posY+diamBall/2 >= height){
+      stroke(0)
+     fill(219, 7, 7)
+      textSize(180)
+      text("LOSER",200, 200);
+      print("LOSER");
+      velX = 0;
+      velY = 0;
+      points = "Game Over";
+
+
+    }
+
+    if (velX != 0 && posX >= mouseX-padWidth/2 && posX <= mouseX+padWidth/2 && posY+diamBall/2 >= height-10-padHeight/2){
+      velY = -random(vel-3,vel);
+      velX =random(-vel,vel);
+      points++;
+    }
   }
-  if (posY-diamBall/2 <= 0) {
-    velY = velY*-1;
-  }
-
-   stroke(0)
-   fill(250 )
-
-  if (posY+diamBall/2 >= height){
-    stroke(0)
-   fill(219, 7, 7)
-    textSize(180)
-    text("LOSER",height/2, width/2);
-    print("LOSER");
-    velX = 0;
-    velY = 0;
-    points = "Game Over";
-
-
-  }
-
-  if (velX != 0 && posX >= mouseX-padWidth/2 && posX <= mouseX+padWidth/2 && posY+diamBall/2 >= height-10-padHeight/2){
-    velY = -random(vel-3,vel);
-    velX =random(-vel,vel);
-    points++;
-  }
-}
-
-}
